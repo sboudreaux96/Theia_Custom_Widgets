@@ -31,15 +31,17 @@ export class AccountWIdgetContribution extends AbstractViewContribution<AccountW
     }
 
     @postConstruct()
-    async initializeLayout(app: FrontendApplication): Promise<void>{
-        await AbstractViewContribution.openView({activate: false});
-    }
+async initializeLayout(app: FrontendApplication): Promise<void>{
+    await this.openView({activate: false});
+}
 
-    async onStart(app: FrontendApplication): Promise<void>{
-        AbstractViewContribution.openView({reveal: true});
-    }
+async onStart(app: FrontendApplication): Promise<void>{
+    this.stateService.reachedState('ready').then(
+        () => this.openView({ reveal: true })
+    );
+}
     
-
+    //Test
     /**
      * Example command registration to open the widget from the menu, and quick-open.
      * For a simpler use case, it is possible to simply call:
