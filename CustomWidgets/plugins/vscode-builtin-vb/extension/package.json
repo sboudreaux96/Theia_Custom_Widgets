@@ -1,0 +1,50 @@
+{
+  "name": "vb",
+  "displayName": "Visual Basic Language Basics (built-in)",
+  "description": "Provides snippets, syntax highlighting, bracket matching and folding in Visual Basic files.",
+  "version": "1.45.1",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "vb",
+        "extensions": [
+          ".vb",
+          ".brs",
+          ".vbs",
+          ".bas"
+        ],
+        "aliases": [
+          "Visual Basic",
+          "vb"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "vb",
+        "scopeName": "source.asp.vb.net",
+        "path": "./syntaxes/asp-vb-net.tmlanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "vb",
+        "path": "./snippets/vb.code-snippets"
+      }
+    ]
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "theme-quietlight",
+  "displayName": "Quiet Light Theme (built-in)",
+  "description": "Quiet light theme for Visual Studio Code",
+  "version": "1.45.1",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Quiet Light",
+        "uiTheme": "vs",
+        "path": "./themes/quietlight-color-theme.json"
+      }
+    ]
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  },
+  "scripts": {}
+}

@@ -1,0 +1,48 @@
+{
+  "name": "bat",
+  "displayName": "Windows Bat Language Basics (built-in)",
+  "description": "Provides snippets, syntax highlighting, bracket matching and folding in Windows batch files.",
+  "version": "1.45.1",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "bat",
+        "extensions": [
+          ".bat",
+          ".cmd"
+        ],
+        "aliases": [
+          "Batch",
+          "bat"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "bat",
+        "scopeName": "source.batchfile",
+        "path": "./syntaxes/batchfile.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "bat",
+        "path": "./snippets/batchfile.code-snippets"
+      }
+    ]
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "pug",
+  "displayName": "Pug Language Basics (built-in)",
+  "description": "Provides syntax highlighting and bracket matching in Pug files.",
+  "version": "1.45.1",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "jade",
+        "extensions": [
+          ".jade",
+          ".pug"
+        ],
+        "aliases": [
+          "Pug",
+          "Jade",
+          "jade"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "jade",
+        "scopeName": "text.pug",
+        "path": "./syntaxes/pug.tmLanguage.json"
+      }
+    ]
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  }
+}

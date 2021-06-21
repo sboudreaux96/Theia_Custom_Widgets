@@ -1,0 +1,28 @@
+{
+  "name": "theme-abyss",
+  "displayName": "Abyss Theme (built-in)",
+  "description": "Abyss theme for Visual Studio Code",
+  "version": "1.45.1",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Abyss",
+        "uiTheme": "vs-dark",
+        "path": "./themes/abyss-color-theme.json"
+      }
+    ]
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  },
+  "scripts": {}
+}
