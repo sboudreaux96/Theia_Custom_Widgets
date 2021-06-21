@@ -14,7 +14,7 @@ export class AccountWIdgetWidget extends ReactWidget {
 
     
     static readonly ID = 'AccountWIdget:widget';
-    static readonly LABEL = 'Account Widget';
+    static readonly LABEL = 'Atlas Map';
 
     @inject(MessageService)
     protected readonly messageService!: MessageService;
@@ -30,17 +30,11 @@ export class AccountWIdgetWidget extends ReactWidget {
     }
 
     protected render(): React.ReactNode {
-        const header = `This is where account information would go if we want to open that.`;
+        const header = `This is our Atlas Map widget`;
         return <div id='widget-container'>
             <AlertMessage type='INFO' header={header} /> 
             Check this box to toggle the widget from being closable and unclosable  <br></br>       
-            <input type="checkbox" defaultChecked={this.title.closable} onChange={e => this.title.closable = e.target.checked} /><br></br><br></br>
-            Create your own menu item
-            <form action="#">
-                <label>Name of Menu Item: </label><br></br>
-                <input id="nameOfMenuItem"></input>
-                <button type="submit">Submit</button>
-            </form>
+            <input type="checkbox" defaultChecked={this.title.closable} onChange={e => this.title.closable = e.target.checked} /><br></br>
             <br></br>
             <iframe width="800px" height="800px" src="http://localhost:8586"></iframe>
             <br></br>

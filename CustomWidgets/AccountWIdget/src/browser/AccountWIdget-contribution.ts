@@ -25,7 +25,7 @@ export class AccountWIdgetContribution extends AbstractViewContribution<AccountW
         super({
             widgetId: AccountWIdgetWidget.ID,
             widgetName: AccountWIdgetWidget.LABEL,
-            defaultWidgetOptions: { area: 'main' },
+            defaultWidgetOptions: { area: 'left' },
             toggleCommandId: AccountWIdgetCommand.id
         });
     }
