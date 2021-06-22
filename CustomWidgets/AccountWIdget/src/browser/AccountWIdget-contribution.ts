@@ -4,6 +4,7 @@ import { AccountWIdgetWidget } from './AccountWIdget-widget';
 import { AbstractViewContribution, FrontendApplicationContribution, FrontendApplication } from '@theia/core/lib/browser';
 import { Command, CommandRegistry } from '@theia/core/lib/common/command';
 import { FrontendApplicationStateService } from '@theia/core/lib/browser/frontend-application-state';
+//import { CustomSubMenu } from '../../../SampleMenu/lib/browser/SampleMenu-contribution';
 
 export const AccountWIdgetCommand: Command = { id: 'AccountWIdget:command', label: 'Open Account Widget' };
 
@@ -82,5 +83,11 @@ async onStart(app: FrontendApplication): Promise<void>{
      */
     registerMenus(menus: MenuModelRegistry): void {
         super.registerMenus(menus);
+
+        /*menus.registerMenuAction(CustomSubMenu.subMenuPath, {
+            commandId: AccountWIdgetWidget.ID,
+            label: AccountWIdgetWidget.LABEL,
+            order: 'a10'
+        })*/
     }
 }

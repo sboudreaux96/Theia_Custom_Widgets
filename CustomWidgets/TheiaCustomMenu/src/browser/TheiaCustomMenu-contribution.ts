@@ -75,6 +75,19 @@ export class TheiaCustomMenuCommandContribution implements CommandContribution, 
             label: TheiaCustomMenuCommand.label
         });
 
+        // Collect existing `File` menu items.
+        const fileMenus = menus.getMenu(CommonMenus.FILE).children;
+
+        // Remove existing `File` menu.
+        menus.unregisterMenuAction(CommonMenus.FILE.slice(-1)[0]);
+
+        // Register updated `File` menu and children.
+        menus.registerSubmenu(CommonMenus.FILE, 'Main Menu');
+        for (const menu of fileMenus) {
+            menus.registerMenuNode(CommonMenus.FILE, menu);
+        }
+
+
         //Removes whole Main Menu Items 
         this.menuRegistry.unregisterMenuAction(MonacoMenus.SELECTION.slice(-1)[0]); //Removes "Selection" from the Main menu
         this.menuRegistry.unregisterMenuAction(EditorMainMenu.GO.slice(-1)[0]); //Removes "Go" from the Main Menu

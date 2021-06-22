@@ -17,6 +17,10 @@
 import { Command, CommandContribution, CommandRegistry, MAIN_MENU_BAR, MenuContribution, MenuModelRegistry, MenuNode, SubMenuOptions } from '@theia/core/lib/common';
 import { injectable } from '@theia/core/shared/inversify';
 
+export namespace CustomSubMenu {
+    export const subMenuPath = [...MAIN_MENU_BAR, 'sample-menu'];
+}
+
 const SampleCommand: Command = {
     id: 'sample-command',
     label: 'Widget 1'
@@ -53,18 +57,18 @@ export class SampleCommandContribution implements CommandContribution {
 
 }
 
+
 @injectable()
 export class SampleMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
-        const subMenuPath = [...MAIN_MENU_BAR, 'sample-menu'];
-        menus.registerSubmenu(subMenuPath, 'MD3i', {
+        menus.registerSubmenu(CustomSubMenu.subMenuPath, 'MD3i', {
             order: '2' // that should put the menu right next to the File menu
         });
-        menus.registerMenuAction(subMenuPath, {
+        menus.registerMenuAction(CustomSubMenu.subMenuPath, {
             commandId: SampleCommand.id,
             order: '0'
         });
-        const subSubMenuPath = [...subMenuPath, 'sample-sub-menu'];
+        const subSubMenuPath = [...CustomSubMenu.subMenuPath, 'sample-sub-menu'];
         menus.registerSubmenu(subSubMenuPath, 'Mapper', { order: '2' });
         menus.registerMenuAction(subSubMenuPath, {
             commandId: SampleCommand3.id,
