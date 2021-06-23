@@ -23,6 +23,9 @@
     "electron-app",
     "SampleMenu",
     "browser-app",
+    "electron-app",
+    "Logger",
+    "browser-app",
     "electron-app"
   ]
 }

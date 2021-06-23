@@ -17,7 +17,8 @@
     "AccountWIdget": "0.0.0",
     "TheiaCustomMenu": "0.0.0",
     "@theia/getting-started": "latest",
-    "SampleMenu": "0.0.0"
+    "SampleMenu": "0.0.0",
+    "Logger": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "latest"
