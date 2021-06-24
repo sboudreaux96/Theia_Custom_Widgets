@@ -5,10 +5,3 @@
     padding: 10px;
     text-transform: uppercase;
 }
-
-.accountWidgetIcon{
-    /*background-image: url('./account.png');*/
-
-    -webkit-mask: url('./otheratlasmap.svg');
-    mask: url('./otheratlasmap.svg');
-}

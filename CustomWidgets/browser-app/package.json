@@ -10,15 +10,19 @@
     "@theia/messages": "latest",
     "@theia/monaco": "latest",
     "@theia/navigator": "latest",
+    "@theia/plugin-ext": "1.14.0",
+    "@theia/plugin-ext-vscode": "1.14.0",
     "@theia/preferences": "latest",
     "@theia/process": "latest",
     "@theia/terminal": "latest",
     "@theia/workspace": "latest",
+    "@theia/vsx-registry": "latest",
     "AccountWIdget": "0.0.0",
     "TheiaCustomMenu": "0.0.0",
     "@theia/getting-started": "latest",
     "SampleMenu": "0.0.0",
-    "Logger": "0.0.0"
+    "Logger": "0.0.0",
+    "OpenMapper": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "latest"

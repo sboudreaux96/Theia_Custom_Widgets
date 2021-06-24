@@ -26,6 +26,9 @@
     "electron-app",
     "Logger",
     "browser-app",
+    "electron-app",
+    "OpenMapper",
+    "browser-app",
     "electron-app"
   ]
 }

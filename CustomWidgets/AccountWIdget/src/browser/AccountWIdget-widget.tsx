@@ -24,7 +24,7 @@ export class AccountWIdgetWidget extends ReactWidget {
         this.id = AccountWIdgetWidget.ID;
         this.title.label = AccountWIdgetWidget.LABEL;
         this.title.caption = AccountWIdgetWidget.LABEL;
-        this.title.closable = true;
+        this.title.closable = false;
         this.title.iconClass = 'accountWidgetIcon'; // example widget icon.
         this.update();
     }
@@ -36,7 +36,7 @@ export class AccountWIdgetWidget extends ReactWidget {
             Check this box to toggle the widget from being closable and unclosable  <br></br>       
             <input type="checkbox" defaultChecked={this.title.closable} onChange={e => this.title.closable = e.target.checked} /><br></br>
             <br></br>
-            <iframe width="800px" height="800px" src="http://localhost:8586"></iframe>
+            <iframe width="100%" height="800px" src="http://localhost:8586"></iframe>
             <br></br>
             <button className='theia-button secondary' title='Display Message' onClick={_a => this.displayMessage()}>Display Message</button>
         </div>
