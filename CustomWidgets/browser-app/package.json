@@ -22,7 +22,9 @@
     "@theia/getting-started": "latest",
     "SampleMenu": "0.0.0",
     "Logger": "0.0.0",
-    "OpenMapper": "0.0.0"
+    "OpenMapper": "0.0.0",
+    "PropertyView": "0.0.0",
+    "GettingStarted2": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "latest"

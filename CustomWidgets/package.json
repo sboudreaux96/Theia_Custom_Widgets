@@ -29,6 +29,12 @@
     "electron-app",
     "OpenMapper",
     "browser-app",
+    "electron-app",
+    "PropertyView",
+    "browser-app",
+    "electron-app",
+    "GettingStarted2",
+    "browser-app",
     "electron-app"
   ]
 }

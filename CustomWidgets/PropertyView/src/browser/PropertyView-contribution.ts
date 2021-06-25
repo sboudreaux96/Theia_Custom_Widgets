@@ -1,17 +1,14 @@
-import { injectable, inject, postConstruct } from 'inversify';
+import { injectable } from 'inversify';
 import { MenuModelRegistry } from '@theia/core';
-import { LoggerWidget } from './Logger-widget';
-import { AbstractViewContribution, FrontendApplication } from '@theia/core/lib/browser';
+import { PropertyViewWidget } from './PropertyView-widget';
+import { AbstractViewContribution } from '@theia/core/lib/browser';
 import { Command, CommandRegistry } from '@theia/core/lib/common/command';
-import { FrontendApplicationStateService } from '@theia/core/lib/browser/frontend-application-state';
 
-export const LoggerCommand: Command = { id: 'Logger:command' };
+export const PropertyViewCommand: Command = { id: 'PropertyView:command' };
 
 @injectable()
-export class LoggerContribution extends AbstractViewContribution<LoggerWidget> {
+export class PropertyViewContribution extends AbstractViewContribution<PropertyViewWidget> {
 
-    @inject(FrontendApplicationStateService)
-    protected readonly stateService: FrontendApplicationStateService;
     /**
      * `AbstractViewContribution` handles the creation and registering
      *  of the widget including commands, menus, and keybindings.
@@ -22,22 +19,13 @@ export class LoggerContribution extends AbstractViewContribution<LoggerWidget> {
      */
     constructor() {
         super({
-            widgetId: LoggerWidget.ID,
-            widgetName: LoggerWidget.LABEL,
+            widgetId: PropertyViewWidget.ID,
+            widgetName: PropertyViewWidget.LABEL,
             defaultWidgetOptions: { area: 'right' },
-            toggleCommandId: LoggerCommand.id
+            toggleCommandId: PropertyViewCommand.id
         });
     }
 
-    @postConstruct()
-    async initializeLayout(app: FrontendApplication): Promise<void>{
-        await this.openView({activate: false});
-    }
-    async onStart(app: FrontendApplication): Promise<void>{
-        this.stateService.reachedState('ready').then(
-            () => this.openView({ reveal: true })
-        );
-    }
     /**
      * Example command registration to open the widget from the menu, and quick-open.
      * For a simpler use case, it is possible to simply call:
@@ -57,7 +45,7 @@ export class LoggerContribution extends AbstractViewContribution<LoggerWidget> {
      * @param commands
      */
     registerCommands(commands: CommandRegistry): void {
-        commands.registerCommand(LoggerCommand, {
+        commands.registerCommand(PropertyViewCommand, {
             execute: () => super.openView({ activate: false, reveal: true })
         });
     }
@@ -80,4 +68,3 @@ export class LoggerContribution extends AbstractViewContribution<LoggerWidget> {
         super.registerMenus(menus);
     }
 }
-

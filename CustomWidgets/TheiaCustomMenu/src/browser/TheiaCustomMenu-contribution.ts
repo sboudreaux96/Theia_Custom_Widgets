@@ -78,8 +78,12 @@ export class TheiaCustomMenuCommandContribution implements CommandContribution, 
         // Collect existing `File` menu items.
         const fileMenus = menus.getMenu(CommonMenus.FILE).children;
 
+        //const fileOpenMenus = menus.getMenu(CommonMenus.FILE_OPEN).children;
+
         // Remove existing `File` menu.
         menus.unregisterMenuAction(CommonMenus.FILE.slice(-1)[0]);
+
+        //menus.unregisterMenuAction(CommonMenus.FILE_OPEN.slice(-1)[0]);
 
         // Register updated `File` menu and children.
         menus.registerSubmenu(CommonMenus.FILE, 'Main Menu');
@@ -87,6 +91,10 @@ export class TheiaCustomMenuCommandContribution implements CommandContribution, 
             menus.registerMenuNode(CommonMenus.FILE, menu);
         }
 
+        /*menus.registerSubmenu(CommonMenus.FILE_OPEN, 'Open Project');
+        for (const menu of fileOpenMenus) {
+            menus.registerMenuNode(CommonMenus.FILE_OPEN, menu);
+        }*/
 
         //Removes whole Main Menu Items 
         this.menuRegistry.unregisterMenuAction(MonacoMenus.SELECTION.slice(-1)[0]); //Removes "Selection" from the Main menu
