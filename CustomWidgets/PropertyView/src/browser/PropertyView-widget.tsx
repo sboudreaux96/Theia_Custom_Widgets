@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { injectable, postConstruct, inject } from 'inversify';
-import { AlertMessage } from '@theia/core/lib/browser/widgets/alert-message';
 import { ReactWidget } from '@theia/core/lib/browser/widgets/react-widget';
 import { MessageService } from '@theia/core';
 
@@ -8,7 +7,7 @@ import { MessageService } from '@theia/core';
 export class PropertyViewWidget extends ReactWidget {
 
     static readonly ID = 'PropertyView:widget';
-    static readonly LABEL = 'PropertyView Widget';
+    static readonly LABEL = 'Property View ';
 
     @inject(MessageService)
     protected readonly messageService!: MessageService;
@@ -24,16 +23,64 @@ export class PropertyViewWidget extends ReactWidget {
     }
 
     protected render(): React.ReactNode {
-        const header = `This is a sample widget which simply calls the messageService
-        in order to display an info message to end users.`;
         return <div id='widget-container'>
-            <AlertMessage type='INFO' header={header} />
-            <button className='theia-button secondary' title='Display Message' onClick={_a => this.displayMessage()}>Display Message</button>
+            <table width="100%">
+            <tr>
+                <th>General</th>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td width="100%"><input type="text" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Stereotype</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Alias</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Keywords</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Version</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            
+            <tr>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td>Abstract</td>
+                <td><input type="checkbox" name="type"/></td>
+            </tr>
+			<tr>
+                <td>Active</td>
+                <td><input type="checkbox" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Classifier Behavior</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Final Specialization</td>
+                <td><input type="checkbox" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Leaf</td>
+                <td><input type="checkbox" name="type"/></td>
+            </tr>
+            <tr>
+                <td>Visibility</td>
+                <td><input type="text" name="type"/></td>
+            </tr>
+            </table>
         </div>
     }
-
-    protected displayMessage(): void {
-        this.messageService.info('Congratulations: PropertyView Widget Successfully Created!');
-    }
-
 }

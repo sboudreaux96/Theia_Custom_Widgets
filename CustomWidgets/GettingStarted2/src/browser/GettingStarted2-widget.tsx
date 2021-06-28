@@ -4,7 +4,7 @@ import { injectable, inject, postConstruct } from '@theia/core/shared/inversify'
 import { ReactWidget } from '@theia/core/lib/browser/widgets/react-widget';
 import { CommandRegistry, isOSX, environment, Path } from '@theia/core/lib/common';
 import { WorkspaceCommands, WorkspaceService } from '@theia/workspace/lib/browser';
-import { CommonCommands, LabelProvider, Key, KeyCode } from '@theia/core/lib/browser';
+import { CommonCommands, LabelProvider, Key, KeyCode, ApplicationShell } from '@theia/core/lib/browser';
 import { ApplicationInfo, ApplicationServer } from '@theia/core/lib/common/application-protocol';
 import { EnvVariablesServer } from '@theia/core/lib/common/env-variables';
 import { WindowService } from '@theia/core/lib/browser/window/window-service';
@@ -65,14 +65,23 @@ export class GettingStarted2Widget extends ReactWidget {
  
      @inject(WorkspaceService)
      protected readonly workspaceService: WorkspaceService;
- 
+
+     @inject(ApplicationShell)
+     protected readonly applicationShell: ApplicationShell;
+
      @postConstruct()
      protected async init(): Promise<void> {
          this.id = GettingStarted2Widget.ID;
          this.title.label = GettingStarted2Widget.LABEL;
          this.title.caption = GettingStarted2Widget.LABEL;
          this.title.closable = true;
-         this.title.iconClass = 'gettingStartedIcon'
+         this.title.iconClass = 'gettingStartedIcon';
+
+         //console.info(this.applicationShell.mainPanel.isHidden);
+         //this.applicationShell.mainPanel.hide();
+
+         //console.info(this.applicationShell.mainPanel.isHidden);
+         
  
          this.applicationInfo = await this.appServer.getApplicationInfo();
          this.recentWorkspaces = await this.workspaceService.recentWorkspaces();
